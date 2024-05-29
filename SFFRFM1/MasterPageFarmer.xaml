@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SFFRFM1.MasterPageFarmer"
+    xmlns:pages="clr-namespace:SFFRFM1">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#fff">
+            <StackLayout Orientation="Vertical">
+                <ScrollView VerticalOptions="Start">
+                    <StackLayout Orientation="Vertical" BackgroundColor="#fff">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" Margin="0,0,0,0" HeightRequest="220" BackgroundColor="White">
+                                <Frame Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Padding="0" IsClippedToBounds="True" BackgroundColor="LightGray">
+                                    <Grid>
+                                        <Image Source="h7.jpeg" Aspect="AspectFill" />
+                                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                            <Label x:Name="lblUsername" Text="" HorizontalTextAlignment="Start" FontSize="Large" Margin="20,0,0,0" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="EndAndExpand" TextColor="White" />
+                                            <Label Text="Welcome To SFFRFM" HorizontalTextAlignment="Start" FontAttributes="Bold" FontSize="Small" Margin="20,0,0,0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" TextColor="White" />
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <ListView x:Name="navigationList" Margin="0" SeparatorVisibility="Default"
+                            VerticalOptions="Start" ItemTapped="Item_Tapped">
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <ContentView BackgroundColor="White">
+                                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+                                                <Image Source="{Binding IconSource}" HorizontalOptions="Start" VerticalOptions="Center" Margin="15,0,5,2"
+                        HeightRequest="25" WidthRequest="25" />
+                                                <Label Text="{Binding OptionName}" FontAttributes="Bold" FontSize="Default" Margin="10,0,5,2"
+                        HorizontalOptions="Start" VerticalOptions="Center">
+                                                    <Label.Triggers>
+                                                        <DataTrigger TargetType="Label" Binding="{Binding IsActive}" Value="True">
+                                                            <Setter Property="TextColor" Value="#74ab15" />
+                                                        </DataTrigger>
+                                                    </Label.Triggers>
+                                                </Label>
+                                            </StackLayout>
+                                        </ContentView>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+
+
+
+
+
+                        </ListView>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

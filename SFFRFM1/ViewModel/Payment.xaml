@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SFFRFM1.ViewModel.Payment">
+
+    <StackLayout>
+        <Entry Text="{Binding CreditCardNumber}" Placeholder="Enter your credit card number"></Entry>
+        <StackLayout Orientation="Horizontal">
+            <Entry Text="{Binding ExpiryDate}" Placeholder="Expiry date"></Entry>
+            <Entry Text="{Binding CVV}" Placeholder="CVV"></Entry>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
